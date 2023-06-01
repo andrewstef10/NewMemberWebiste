@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>New Member Website</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <h1>Welcome! Please enter your information below</h1>
+        <p id="memberCounter">Members Submitted: 0</p>
+
+        <video id="camera" autoplay></video>
+        <img id="capturedImage" style="display: none;" src="#" alt="Captured Image">
+
+        <button id="takePictureButton" onclick="take_snapshot()">Take Picture</button>
+
+        <p>Please take a picture, enter your information, then click the submit button</p>
+        <p id="errorMessage"></p>
+
+        <label for="userInput">First Name:</label>
+        <input type="text" id="firstName" name="firstName">
+
+        <label for="userInput">Last Name:</label>
+        <input type="text" id="lastName" name="lastName">
+
+        <label for="userInput">Age:</label>
+        <input type="number" id="age" name="age">
+
+        <label for="userInput">Class:</label>
+        <input type="text" id="class" name="class">
+
+        <button id="submitButton" onclick="submitNewMember()">Submit</button>
+
+        <button id="printArrButton" onclick="printNewMemberArr()">Export To PDF</button>
+
+        <!-- used for printing new members to webpage -->
+        <!-- <div id="listOfNewMembers-container"></div> -->
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="script.js"></script>
+
+        <!-- <script type="text/javascript">
+            function printNewMemberArr() {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+                doc.setFontSize(11);
+                doc.text("TEST DOCUMENT", 10, 10);
+                doc.save('output.pdf');
+            }
+        
+        </script> -->
+        
+
+        
+    </body>
+
+    
+    
+</html>

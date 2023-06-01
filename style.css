@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px; /* gives h1 padding on bottom */
+    font-size: 48px;
+    color: #333;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+#memberCounter {
+    text-align: right;
+    margin-right: 5%;
+    font-size: 30px;
+    color: #666;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+video#camera {
+    width: 500px;
+    height: 375px;
+    border: 1px solid #ccc;
+    display: block;
+    margin: 0 auto;
+}
+
+img#capturedImage {
+    width: 500px;
+    height: 375px;
+    border: 1px solid #ccc;
+    display: block;
+    margin: 0 auto;
+}
+
+button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+p#errorMessage {
+    font-size: 14px;
+    color: red;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#submitButton {
+    margin-top: 20px;
+}
+
+#printArrButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    margin-top: 20px;
+}
+
+#printArrButton:hover {
+    background-color: #0056b3;
+}
+
+/* .listOfNewMembers-container {
+    margin-top: 20px;
+} */
+
+/* .listOfNewMembers {
+    list-style: none;
+    padding: 0;
+}
+
+.listOfNewMembers li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+} */
+  
