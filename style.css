@@ -100,7 +100,19 @@ input {
     margin-top: 20px;
 }
 
+#resetArrButton {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #007bff;
+    margin-top: 20px;
+}
+
 #printArrButton:hover {
+    background-color: #0056b3;
+}
+
+#resetArrButton:hover {
     background-color: #0056b3;
 }
 

@@ -14,7 +14,12 @@ navigator.mediaDevices.getUserMedia({ video: true })
 });
 
 
-let listOfNewMembers = [];
+var listOfNewMembers = [];
+if (localStorage.getItem('listOfNewMembers')) {
+    listOfNewMembers = JSON.parse(localStorage.getItem('listOfNewMembers'));
+    newMemberCount = listOfNewMembers.length;
+    document.getElementById("memberCounter").innerHTML = "Members Submitted: " + newMemberCount;
+}
 
 //used to store the new members image as a string
 let imageDataURL = null;
@@ -100,6 +105,11 @@ function submitNewMember() {
         picture: imageDataURL
     };
     listOfNewMembers.push(person);
+    localStorage.setItem('listOfNewMembers', JSON.stringify(listOfNewMembers));
+
+    //increment new member count
+    newMemberCount++;
+    document.getElementById("memberCounter").innerHTML = "Members Submitted: " + newMemberCount;
 
     //reset the values in the text boxes
     document.getElementById("firstName").value = '';
@@ -113,10 +123,6 @@ function submitNewMember() {
     capturedImage.style.display = 'none';
     camera.style.display = 'block';
     document.getElementById("takePictureButton").innerHTML = "Take Picture"
-
-    //increment new member count
-    newMemberCount++;
-    document.getElementById("memberCounter").innerHTML = "Members Submitted: " + newMemberCount;
 }
 
 /**
@@ -129,6 +135,9 @@ function equalsIgnoringCase(text, other) {
     return text.localeCompare(other, undefined, { sensitivity: 'base' }) === 0;
 }
 
+/**
+ * Generages a PDF with each new member and their information on a seprate page
+ */
 function printNewMemberArr() {
     // document.getElementById("printArr").innerHTML = JSON.stringify(listOfNewMembers);
 
@@ -159,11 +168,11 @@ function printNewMemberArr() {
     //     div.appendChild(personClass);
     //     container.appendChild(div);
     // }
+
     if (listOfNewMembers.length == 0) {
         document.getElementById("errorMessage").innerHTML = "No members have been submitted";
         return;
     }
-
 
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
@@ -209,6 +218,20 @@ function printNewMemberArr() {
     
     
 
+}
+
+/**
+ * Clears the local storage therefore deleting all new members added to the system
+ */
+function resetNewMemberArr() {
+    var confirmation = confirm("Are you sure you want to clear all new members?");
+
+    if (confirmation) {
+        listOfNewMembers = [];
+        newMemberCount = 0;
+        document.getElementById("memberCounter").innerHTML = "Members Submitted: " + newMemberCount;
+        localStorage.clear();
+    }
 }
 
 
